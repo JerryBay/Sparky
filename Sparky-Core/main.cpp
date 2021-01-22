@@ -4,8 +4,13 @@
 int main()
 {
 	using namespace Sparky::Graphics;
+	using namespace Sparky::Maths;
 	Window win("window",960,540);
 	glClearColor(0.2f,0.1f,0.1f,0.1f);
+
+	Vec2 v(1.0f, 2.0f);
+	v.add(Vec2(5.0f, 6.0f));
+	std::cout << v << std::endl;
 
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
@@ -23,9 +28,13 @@ int main()
 		{
 			std::cout << "MOUSEBUTTON!" << std::endl;
 		}
+#if 0		
 		double x, y;
 		Window::getMousePosition(x, y);
 		std::cout << x << "," << y << std::endl;
+#endif // 0
+
+
 #if 1
 		glBegin(GL_TRIANGLES);
 		glVertex2f(-0.5f,-0.5f);

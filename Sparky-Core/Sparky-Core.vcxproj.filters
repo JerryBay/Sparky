@@ -21,6 +21,12 @@
     <ClCompile Include="src\graphics\Window.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\maths\Vec2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\maths\Vec3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sparky.h">
@@ -30,6 +36,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\maths\Vec2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\maths\Vec3.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
