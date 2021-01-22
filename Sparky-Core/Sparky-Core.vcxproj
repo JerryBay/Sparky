@@ -100,11 +100,14 @@
     <ClCompile Include="src\graphics\Window.cpp" />
     <ClCompile Include="src\maths\Vec2.cpp" />
     <ClCompile Include="src\maths\Vec3.cpp" />
+    <ClCompile Include="src\maths\Vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sparky.h" />
+    <ClInclude Include="src\maths\Math.h" />
     <ClInclude Include="src\maths\Vec2.h" />
     <ClInclude Include="src\maths\Vec3.h" />
+    <ClInclude Include="src\maths\Vec4.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\graphics\Window.h" />
   </ItemGroup>
