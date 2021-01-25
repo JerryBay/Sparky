@@ -1,3 +1,6 @@
+#include <glew.h>
+#include <glfw3.h>
+#include <iostream>
 #include "Window.h"
 
 namespace Sparky

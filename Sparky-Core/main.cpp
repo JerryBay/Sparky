@@ -12,6 +12,9 @@ int main()
 	v.add(Vec2(5.0f, 6.0f));
 	std::cout << v << std::endl;
 
+	Mat4 position = Mat4::translation(Vec3(2, 3, 4));
+	position *= Mat4::identity();
+
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);

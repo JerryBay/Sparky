@@ -1,4 +1,4 @@
 #pragma once
-
-#include <graphics/Window.h>
-#include <maths/Math.h>
+#include <iostream>
+#include <graphics/Graphics.h>
+#include <maths/Maths.h>

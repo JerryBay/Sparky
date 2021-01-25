@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Vec2.h"
 
 namespace Sparky
