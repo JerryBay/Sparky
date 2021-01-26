@@ -6,13 +6,19 @@ namespace Sparky
 	{
 		struct Mat4
 		{
-			float elements[4 * 4];
+			union 
+			{
+				float elements[4 * 4];
+				Vec4 columns[4];
+			};
+
 
 			Mat4();
 			Mat4(float diagonal);
 
 			Vec4 getcolumn(int index)
 			{
+				index *= 4;
 				return Vec4(elements[index], elements[index + 1], elements[index + 2], elements[index + 3]);
 			}
 
