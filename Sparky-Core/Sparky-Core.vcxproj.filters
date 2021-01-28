@@ -45,6 +45,18 @@
     <ClCompile Include="src\graphics\buffers\VertexArray.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\Simple2DRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\BatchRenderer2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Sprite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Static_Sprite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sparky.h">
@@ -68,15 +80,6 @@
     <ClInclude Include="src\maths\Mat4.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\Graphics.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\maths\Maths.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\maths\Math_Funcs.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\utils\FileUtils.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -90,6 +93,36 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\buffers\VertexArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\buffers\BuffersH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\GraphicsH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\maths\MathsH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\maths\Maths_Funcs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Renderer2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Renderable2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Simple2DRenderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\BatchRenderer2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Sprite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Static_Sprite.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
