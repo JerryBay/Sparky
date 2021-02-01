@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 
+
 namespace Sparky
 {
 	class FileUtil

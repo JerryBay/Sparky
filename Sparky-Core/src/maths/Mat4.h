@@ -6,15 +6,17 @@ namespace Sparky
 	{
 		struct Mat4
 		{
+			friend std::ostream& operator<<(std::ostream& stream, const Mat4& mat);
+
 			union 
 			{
 				float elements[4 * 4];
 				Vec4 columns[4];
 			};
 
-
 			Mat4();
 			Mat4(float diagonal);
+			Mat4(float* datas,int size);
 
 			Vec4 getcolumn(int index)
 			{

@@ -1,6 +1,6 @@
 #include "Sparky.h"
 #include <time.h>
-#define  BATCH_RENDER 1
+
 
 
 int main()
@@ -8,6 +8,11 @@ int main()
 	using namespace Sparky;
 	using namespace Sparky::Graphics;
 	using namespace Sparky::Maths;
+
+	Mat4 m = Mat4::translation(Vec3(1, 1, 1));
+	m *= Mat4::translation(Vec3(5, 5, 5));
+	std::cout << m << std::endl;
+
 	Window win("Sparky", 960, 540);
 	glClearColor(0.0f, 0.0f, 0.0f,1.0f);
 
@@ -27,22 +32,16 @@ int main()
 	{
 		for (float x = 0; x < 16.0f; x+=0.1f)
 		{
-			sprites.push_back(new 
-#if BATCH_RENDER
-				Sprite
-#else
-				Static_Sprite
-#endif // BATCH_RENDER
-				(x, y, 0.9f, 0.9f, Maths::Vec4(rand()%1000/1000.0f, 0, 1, 1)
-#if !BATCH_RENDER
-				,shader
-#endif // !BATCH_RENDER
-				));
+			sprites.push_back(new Static_Sprite(x, y, 0.9f, 0.9f, Maths::Vec4(rand()%1000/1000.0f, 0, 1, 1),shader));
 		}
 	}
 
 	shader.setUniform2f("light_pos", Vec2(0.0f, 0.0f));
 	shader.setUniform4f("color", Vec4(0.2f, 0.5f, 0.8f, 1.0f));
+
+	Timer time;
+	float timer=0;
+	unsigned int frames = 0;
 
 	while (!win.closed())
 	{
@@ -58,6 +57,14 @@ int main()
 		renderer.end();
 		renderer.flush();
 		win.update();
+		frames++;
+
+		if (time.elapsed()-timer>1.0f)
+		{
+			timer += 1.0f;
+			printf("%d fps\n", frames);
+			frames = 0;
+		}
 	}
 	//system("pause");
 	return 0;

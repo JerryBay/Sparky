@@ -88,6 +88,7 @@ namespace Sparky
 			glfwSetKeyCallback(m_Window, key_callback);
 			glfwSetMouseButtonCallback(m_Window, mouseButton_callback);
 			glfwSetCursorPosCallback(m_Window, cursor_position_callback);
+			glfwSwapInterval(0.0f);
 
 			std::cout << "OpenGL version:OpenGL " << glGetString(GL_VERSION) << std::endl;
 

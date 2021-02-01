@@ -5,6 +5,17 @@ namespace Sparky
 {
 	namespace Maths
 	{
+		std::ostream& operator<<(std::ostream& stream, const Mat4& mat)
+		{
+			stream << "Mat4: (" << std::endl
+				<< mat.columns[0] << std::endl
+				<< mat.columns[1] << std::endl
+				<< mat.columns[2] << std::endl
+				<< mat.columns[3] << std::endl 
+				<<")"<< std::endl;
+			return stream;
+		}
+
 		Mat4::Mat4()
 		{
 			for (int i = 0; i < 4 * 4; i++)
@@ -25,6 +36,15 @@ namespace Sparky
 			elements[3 + 3 * 4] = diagonal;
 		}
 
+		Mat4::Mat4(float* datas, int size)
+		{
+			for (int i = 0; i < 4 * 4; i++)
+			{
+				elements[i] = 0.0f;
+			}
+			memcpy(elements,datas,size*sizeof(float));
+		}
+
 		Mat4 Mat4::identity()
 		{
 			return Mat4(1.0f);
@@ -32,6 +52,7 @@ namespace Sparky
 
 		Mat4& Mat4::multiply(const Mat4& other)
 		{
+			float datas[16];
 			for (int y = 0; y < 4; y++)
 			{
 				for (int x = 0; x < 4; x++)
@@ -41,11 +62,11 @@ namespace Sparky
 					{
 						sum += elements[x + e * 4] * other.elements[e + y * 4];
 					}
-					elements[x + y * 4] = sum;
+					datas[x + y * 4] = sum;
 				}
 			}
-
-			return *this;
+			Mat4 result(datas, 16);
+			return result;
 		}
 
 		Mat4 operator*(Mat4 left, const Mat4& right)
@@ -55,7 +76,21 @@ namespace Sparky
 
 		Mat4& Mat4::operator*=(const Mat4& other)
 		{
-			return multiply(other);
+			float datas[16];
+			for (int y = 0; y < 4; y++)
+			{
+				for (int x = 0; x < 4; x++)
+				{
+					float sum = 0.0f;
+					for (int e = 0; e < 4; e++)
+					{
+						sum += elements[x + e * 4] * other.elements[e + y * 4];
+					}
+					datas[x + y * 4] = sum;
+				}
+			}
+			memcpy(elements, datas, 4 * 4 * sizeof(float));
+			return *this;
 		}
 
 		Mat4 Mat4::orthographic(float left, float right, float buttom, float top, float near, float far)

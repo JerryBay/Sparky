@@ -9,8 +9,8 @@ namespace Sparky
 			m_RenderQueue.push_back(renderable);
 		}
 
-		//void Simple2DRenderer::flush()
-		//{
+		void Simple2DRenderer::flush()
+		{
 		//	Renderable2D* renderable;
 		//	while (!m_RenderQueue.empty())
 		//	{
@@ -26,6 +26,6 @@ namespace Sparky
 
 		//		m_RenderQueue.pop_front();
 		//	}
-		//}
+		}
 	}
 }
