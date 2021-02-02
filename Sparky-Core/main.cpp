@@ -18,9 +18,12 @@ int main()
 
 	Mat4 ortho = Mat4::orthographic(0.0f,16.0f,0.0f,9.0f,-1.0f,1.0f);
 
-	Shader shader("src/shaders/basic.vert","src/shaders/basic.frag");
-	shader.enable();
-	shader.setUniformMat4("pr_matrix",ortho);
+	Shader* shader=new Shader("src/shaders/basic.vert","src/shaders/basic.frag");
+	shader->enable();
+	shader->setUniformMat4("pr_matrix",ortho);
+
+	TileLayer layer(shader);
+	layer.add(new Sprite(0, 0, 2, 2, Maths::Vec4(0.8f, 0.2f, 0.8f, 1.0f)));
 
 	std::vector<Renderable2D*> sprites;
 
@@ -28,16 +31,16 @@ int main()
 
 	BatchRenderer2D renderer;
 
-	for (float y = 0; y < 9.0f; y+=0.1f)
+	for (float y = -0.9f; y < 9.0f; y+=0.1f)
 	{
-		for (float x = 0; x < 16.0f; x+=0.1f)
+		for (float x = -16.0f; x < 16.0f; x+=0.1f)
 		{
-			sprites.push_back(new Static_Sprite(x, y, 0.9f, 0.9f, Maths::Vec4(rand()%1000/1000.0f, 0, 1, 1),shader));
+			layer.add(new Sprite(x, y, 0.9f, 0.9f, Maths::Vec4(rand()%1000/1000.0f, 0, 1, 1)));
 		}
 	}
 
-	shader.setUniform2f("light_pos", Vec2(0.0f, 0.0f));
-	shader.setUniform4f("color", Vec4(0.2f, 0.5f, 0.8f, 1.0f));
+	shader->setUniform2f("light_pos", Vec2(0.0f, 0.0f));
+	shader->setUniform4f("color", Vec4(0.2f, 0.5f, 0.8f, 1.0f));
 
 	Timer time;
 	float timer=0;
@@ -48,14 +51,10 @@ int main()
 		win.clear();
 		double x, y;
 		win.getMousePosition(x, y);
-		shader.setUniform2f("light_pos", Vec2(x * 16.0f / 960.0f,(9.0f- y * 9.0f / 540.0f)));
-		renderer.begin();
-		for (int i = 0; i < sprites.size(); i++)
-		{
-			renderer.submit(sprites[i]);
-		}
-		renderer.end();
-		renderer.flush();
+		shader->setUniform2f("light_pos", Vec2(x * 32.0f / 960.0f-16.0f,(9.0f- y * 18.0f / 540.0f)));
+
+		layer.render();
+
 		win.update();
 		frames++;
 
@@ -66,6 +65,7 @@ int main()
 			frames = 0;
 		}
 	}
+
 	//system("pause");
 	return 0;
 }

@@ -27,7 +27,7 @@ namespace Sparky
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 
-		void BatchRenderer2D::submit(Renderable2D* renderable)
+		void BatchRenderer2D::submit(const Renderable2D* renderable)
 		{
 			const Maths::Vec3& position = renderable->getPosition();
 			const Maths::Vec2& size = renderable->getSize();

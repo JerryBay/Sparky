@@ -4,7 +4,7 @@ namespace Sparky
 {
 	namespace Graphics
 	{
-		void Simple2DRenderer::submit(Renderable2D* renderable)
+		void Simple2DRenderer::submit(const Renderable2D* renderable)
 		{
 			m_RenderQueue.push_back(renderable);
 		}

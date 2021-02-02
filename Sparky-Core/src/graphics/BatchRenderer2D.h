@@ -7,7 +7,7 @@ namespace Sparky
 {
 	namespace Graphics 
 	{
-#define RENDERER_MAX_SPRITES 100000
+#define RENDERER_MAX_SPRITES 1000000
 #define RENDERER_VERTEX_SIZE sizeof(VertexData)
 #define RENDERER_SPRITE_SIZE RENDERER_VERTEX_SIZE*4 
 #define RENDERER_BUFFER_SIZE RENDERER_VERTEX_SIZE*RENDERER_MAX_SPRITES
@@ -27,9 +27,9 @@ namespace Sparky
 		public:
 			BatchRenderer2D();
 			~BatchRenderer2D();
-			void begin();
-			void end();
-			void submit(Renderable2D* renderable) override;
+			void begin() override;
+			void end()override;
+			void submit(const Renderable2D* renderable) override;
 			void flush() override;
 		private:
 			void init();

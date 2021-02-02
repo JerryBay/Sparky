@@ -100,6 +100,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\layers\Layer.cpp" />
     <ClCompile Include="src\graphics\Sprite.cpp" />
     <ClCompile Include="src\graphics\BatchRenderer2D.cpp" />
     <ClCompile Include="src\graphics\Simple2DRenderer.cpp" />
@@ -114,8 +115,11 @@
     <ClCompile Include="src\maths\Vec4.cpp" />
     <ClCompile Include="src\graphics\buffers\VertexArray.cpp" />
     <ClCompile Include="src\graphics\Static_Sprite.cpp" />
+    <ClCompile Include="src\graphics\layers\TileLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\layers\Layer.h" />
+    <ClInclude Include="src\graphics\layers\LayersH.h" />
     <ClInclude Include="src\graphics\Sprite.h" />
     <ClInclude Include="src\graphics\BatchRenderer2D.h" />
     <ClInclude Include="src\graphics\Renderable2D.h" />
@@ -139,6 +143,7 @@
     <ClInclude Include="src\graphics\buffers\VertexArray.h" />
     <ClInclude Include="src\graphics\Static_Sprite.h" />
     <ClInclude Include="src\utils\Timer.h" />
+    <ClInclude Include="src\graphics\layers\TileLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shaders\basic.frag" />

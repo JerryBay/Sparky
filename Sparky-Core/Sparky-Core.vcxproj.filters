@@ -57,6 +57,12 @@
     <ClCompile Include="src\graphics\Static_Sprite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\layers\Layer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\layers\TileLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sparky.h">
@@ -126,6 +132,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\utils\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\layers\Layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\layers\TileLayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\layers\LayersH.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
