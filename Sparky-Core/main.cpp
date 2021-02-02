@@ -31,9 +31,9 @@ int main()
 
 	BatchRenderer2D renderer;
 
-	for (float y = -0.9f; y < 9.0f; y+=0.1f)
+	for (float y = -0.9f; y < 9.0f; y++)
 	{
-		for (float x = -16.0f; x < 16.0f; x+=0.1f)
+		for (float x = -16.0f; x < 16.0f; x++)
 		{
 			layer.add(new Sprite(x, y, 0.9f, 0.9f, Maths::Vec4(rand()%1000/1000.0f, 0, 1, 1)));
 		}

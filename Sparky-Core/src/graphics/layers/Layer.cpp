@@ -23,7 +23,7 @@ namespace Sparky
 		{
 			m_Shader->enable();
 			m_Renderer->begin();
-			for (const Renderable2D* renderable:m_Renderables)
+			for (Renderable2D* renderable:m_Renderables)
 			{
 				m_Renderer->submit(renderable);
 			}

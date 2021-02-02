@@ -41,19 +41,19 @@ namespace Sparky
 			unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
 
-			m_Buffer->vertex = position;
+			m_Buffer->vertex = m_TransformationStack.back() * position;
 			m_Buffer->colors = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = Maths::Vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->vertex = m_TransformationStack.back() * Maths::Vec3(position.x, position.y + size.y, position.z);
 			m_Buffer->colors = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = Maths::Vec3(position.x+size.x, position.y + size.y, position.z);
+			m_Buffer->vertex = m_TransformationStack.back() * Maths::Vec3(position.x+size.x, position.y + size.y, position.z);
 			m_Buffer->colors = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = Maths::Vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->vertex = m_TransformationStack.back() * Maths::Vec3(position.x + size.x, position.y, position.z);
 			m_Buffer->colors = c;
 			m_Buffer++;
 

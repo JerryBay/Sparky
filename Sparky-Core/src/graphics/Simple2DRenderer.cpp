@@ -11,21 +11,21 @@ namespace Sparky
 
 		void Simple2DRenderer::flush()
 		{
-		//	Renderable2D* renderable;
-		//	while (!m_RenderQueue.empty())
-		//	{
-		//		renderable = m_RenderQueue.front();
-		//		renderable->getVAO()->bind();
-		//		renderable->getIBO()->bind();
+			Static_Sprite* renderable;
+			while (!m_RenderQueue.empty())
+			{
+				renderable = (Static_Sprite*)m_RenderQueue.front();
+				renderable->getVAO()->bind();
+				renderable->getIBO()->bind();
 
-		//		renderable->getShader().setUniformMat4("ml_matrix", Maths::Mat4::translation(renderable->getPosition()));
-		//		glDrawElements(GL_TRIANGLES, renderable->getIBO()->getCount(), GL_UNSIGNED_SHORT, nullptr);
+				renderable->getShader().setUniformMat4("ml_matrix", Maths::Mat4::translation(renderable->getPosition()));
+				glDrawElements(GL_TRIANGLES, renderable->getIBO()->getCount(), GL_UNSIGNED_SHORT, nullptr);
 
-		//		renderable->getIBO()->unbind();
-		//		renderable->getVAO()->unbind();
+				renderable->getIBO()->unbind();
+				renderable->getVAO()->unbind();
 
-		//		m_RenderQueue.pop_front();
-		//	}
+				m_RenderQueue.pop_front();
+			}
 		}
 	}
 }

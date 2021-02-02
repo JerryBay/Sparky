@@ -2,6 +2,7 @@
 
 #include <deque>
 #include "Renderer2D.h"
+#include "Static_Sprite.h"
 
 
 namespace Sparky

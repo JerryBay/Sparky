@@ -16,6 +16,16 @@ namespace Sparky
 			return stream;
 		}
 
+		Vec3 operator*(const Mat4& left, const Vec3& right)
+		{
+			return left.multiply(right);
+		}
+
+		Vec4 operator*(const Mat4& left, const Vec4& right)
+		{
+			return left.multiply(right);
+		}
+
 		Mat4::Mat4()
 		{
 			for (int i = 0; i < 4 * 4; i++)
@@ -50,7 +60,7 @@ namespace Sparky
 			return Mat4(1.0f);
 		}
 
-		Mat4& Mat4::multiply(const Mat4& other)
+		Mat4 Mat4::multiply(const Mat4& other) const
 		{
 			float datas[16];
 			for (int y = 0; y < 4; y++)
@@ -67,6 +77,25 @@ namespace Sparky
 			}
 			Mat4 result(datas, 16);
 			return result;
+		}
+
+		Vec3 Mat4::multiply(const Vec3& other) const
+		{
+			return Vec3(
+				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z ,
+				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z ,
+				columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z 
+			);
+		}
+
+		Vec4 Mat4::multiply(const Vec4& other) const
+		{
+			return Vec4(
+				columns[0].x * other.x+columns[1].x*other.y+columns[2].x*other.z+columns[3].x*other.w,
+				columns[0].y * other.x+columns[1].y*other.y+columns[2].y*other.z+columns[3].y*other.w,
+				columns[0].z * other.x+columns[1].z*other.y+columns[2].z*other.z+columns[3].z*other.w,
+				columns[0].w * other.x+columns[1].w*other.y+columns[2].w*other.z+columns[3].w*other.w
+			);
 		}
 
 		Mat4 operator*(Mat4 left, const Mat4& right)
