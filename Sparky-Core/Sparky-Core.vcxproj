@@ -102,6 +102,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\layers\Group.cpp" />
     <ClCompile Include="src\graphics\layers\Layer.cpp" />
     <ClCompile Include="src\graphics\Sprite.cpp" />
     <ClCompile Include="src\graphics\BatchRenderer2D.cpp" />
@@ -120,6 +121,7 @@
     <ClCompile Include="src\graphics\layers\TileLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\layers\Group.h" />
     <ClInclude Include="src\graphics\layers\Layer.h" />
     <ClInclude Include="src\graphics\layers\LayersH.h" />
     <ClInclude Include="src\graphics\Sprite.h" />

@@ -1,13 +1,14 @@
 #pragma once
+#include <vector>
 #include <glew.h>
 #include <maths/MathsH.h>
-#include "Renderable2D.h"
-#include "Static_Sprite.h"
+
 
 namespace Sparky
 {
 	namespace Graphics
 	{
+		class Renderable2D;
 		class Renderer2D
 		{
 		protected:
