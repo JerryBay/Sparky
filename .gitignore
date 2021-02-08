@@ -34,5 +34,5 @@
 
 #directories
 .vs/
-bin/
-bin-int/
+Debug/
+Release/

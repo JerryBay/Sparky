@@ -9,3 +9,4 @@
 #include "Sprite.h"
 #include "Static_Sprite.h"
 #include "BatchRenderer2D.h"
+#include "Texture.h"

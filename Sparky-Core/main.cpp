@@ -1,14 +1,14 @@
 #include "Sparky.h"
 #include <time.h>
+#include <FreeImage.h>
 
+using namespace Sparky;
+using namespace Graphics;
+using namespace Maths;
 
 #if 0
 int main()
 {
-	using namespace Sparky;
-	using namespace Sparky::Graphics;
-	using namespace Sparky::Maths;
-
 	Mat4 m = Mat4::translation(Vec3(1, 1, 1));
 	m *= Mat4::translation(Vec3(5, 5, 5));
 	std::cout << m << std::endl;
@@ -73,7 +73,7 @@ int main()
 #else
 int main()
 {
-
+	Texture texture("test.png");
 }
 #endif // 0
 
