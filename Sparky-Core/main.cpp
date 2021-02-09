@@ -6,7 +6,7 @@ using namespace Sparky;
 using namespace Graphics;
 using namespace Maths;
 
-#if 0
+#if 1
 int main()
 {
 	Mat4 m = Mat4::translation(Vec3(1, 1, 1));
@@ -42,7 +42,7 @@ int main()
 	shader->setUniform2f("light_pos", Vec2(0.0f, 0.0f));
 	shader->setUniform4f("color", Vec4(0.2f, 0.5f, 0.8f, 1.0f));
 
-	Timer time;
+	//Timer time;
 	float timer = 0;
 	unsigned int frames = 0;
 
@@ -58,12 +58,12 @@ int main()
 		win.update();
 		frames++;
 
-		if (time.elapsed() - timer > 1.0f)
-		{
-			timer += 1.0f;
-			printf("%d fps\n", frames);
-			frames = 0;
-		}
+		//if (time.elapsed() - timer > 1.0f)
+		//{
+		//	timer += 1.0f;
+		//	printf("%d fps\n", frames);
+		//	frames = 0;
+		//}
 	}
 
 	//system("pause");

@@ -66,6 +66,9 @@
     <ClCompile Include="src\graphics\layers\Group.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphics\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sparky.h">
@@ -134,9 +137,6 @@
     <ClInclude Include="src\graphics\Static_Sprite.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils\Timer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\layers\Layer.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -147,6 +147,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\layers\Group.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\ImageLoad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Timer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
