@@ -14,10 +14,14 @@ out DATA
 	vec4 color;
 }vs_out;
 
+attribute vec2 tex_coord;
+varying vec tc;
+
 
 void main()
 {
+	tc=tex_coord;
 	gl_Position= pr_matrix*vw_matrix*ml_matrix* position;
-	vs_out.position=ml_matrix*position;
-	vs_out.color=color;
+	//vs_out.position=ml_matrix*position;
+	//vs_out.color=color;
 }
