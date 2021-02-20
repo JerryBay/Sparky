@@ -39,6 +39,12 @@ int main()
 		}
 	}
 
+	glActiveTexture(GL_TEXTURE0);
+	Texture texture("test.png");
+	texture.bind();
+
+	shader->enable();
+	shader->setUniform1i("tex", 0);
 	shader->setUniform2f("light_pos", Vec2(0.0f, 0.0f));
 	shader->setUniform4f("color", Vec4(0.2f, 0.5f, 0.8f, 1.0f));
 
